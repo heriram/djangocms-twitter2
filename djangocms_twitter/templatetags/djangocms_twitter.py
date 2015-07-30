@@ -18,7 +18,7 @@ TWITTER_HASHTAG_URL = '<a class="hashtag" href="https://twitter.com/hashtag/{has
                       'rel="nofollow" target="_blank">#{hashtag}</a>'
 
 TWITTER_USERNAME_URL = """
-<a class="tweet-url profile mention" href="https://twitter.com/intent/user?screen_name={screen_name}"
+<a class="tweet-url profile mention" href="https://twitter.com/{screen_name}"
     rel="nofollow" target="_blank">@{screen_name}</a>"""
 
 
@@ -30,12 +30,13 @@ def urlize_tweet(tweet):
         Replace shortened URLs with long URLs in the twitter status,
         and add the "RT" flag. Should be used before urlize_tweet
     """
-    if tweet['retweeted']:
-        text = 'RT {user}: {text}'.format(
-            user=TWITTER_USERNAME_URL.format(screen_name=tweet['user']['screen_name']),
-            text=tweet['text'])
-    else:
-        text = tweet['text']
+    # if tweet['retweeted']:
+    #     text = 'RT {user}: {text}'.format(
+    #         user=TWITTER_USERNAME_URL.format(screen_name=tweet['user']['screen_name']),
+    #         text=tweet['text'])
+    # else:
+    #     text = tweet['text']
+    text = tweet['text']
 
     for hashtag in tweet['entities']['hashtags']:
         text = text.replace(
