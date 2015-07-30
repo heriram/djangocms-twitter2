@@ -52,15 +52,19 @@ class Twitter(CMSPlugin):
         choices=TIMELINE_CHOICES, default=USER_TIMELINE,
         help_text=_('You can embed a timeline for Tweets from an individual user, '
                     'a user\'s favorites or any search query or hashtag.'))
-    show_avatar = models.BooleanField(
-        _('Show Avatar?'), default=True,
-        help_text=_('Shows or hides the avatar image.'))
-    show_username = models.BooleanField(
-        _('Show Username?'), default=True,
-        help_text=_('Shows or hides the username text.'))
-    follow_button = models.BooleanField(
-        _('Show Follow Button?'), default=True,
-        help_text=_('Append a follow button to the listing.'))
+    # show_avatar = models.BooleanField(
+    #     _('Show Avatar?'), default=True,
+    #     help_text=_('Shows or hides the avatar image.'))
+    # show_username = models.BooleanField(
+    #     _('Show Username?'), default=True,
+    #     help_text=_('Shows or hides the username text.'))
+    # follow_button = models.BooleanField(
+    #     _('Show Follow Button?'), default=True,
+    #     help_text=_('Append a follow button to the listing.'))
+    # show_title = models.BooleanField(
+    #     _('Show title?'), default=True,
+    #     help_text=_('Shows or hides the username or search-query for this plugin')
+    # )
     plugin_template = models.CharField(
         _('Design'), max_length=150,
         choices=settings.DJANGOCMS_TWITTER_TEMPLATES,

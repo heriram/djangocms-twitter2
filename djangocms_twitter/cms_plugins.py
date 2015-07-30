@@ -33,9 +33,10 @@ class TwitterPlugin(ConnectedAccountAdminMixin, CMSPluginBase):
         (None, {
             'fields': ('no_of_items', 'plugin_template', )
         }),
-        (None, {
-            'fields': ('show_avatar', 'show_username', 'follow_button', )
-        }),
+        # (None, {
+        #     'fields': ('show_avatar', 'show_username', 'follow_button', )
+        #     'fields': ('show_title', )
+        # }),
     )
 
     def get_render_template(self, context, instance, placeholder):
